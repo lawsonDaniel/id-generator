@@ -177,7 +177,15 @@ include("auth_session.php");
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>10</h2>
+                                                <h2>
+                                                <?php 
+                                                 require('db.php');
+                                                $query = "SELECT * FROM `students`";
+                                                $result = mysqli_query($con, $query) or die(mysql_error());
+                                                $rows = mysqli_num_rows($result);
+                                                echo $rows
+                                                ?>
+                                                </h2>
                                                 <span>Total IDs</span>
                                             </div>
                                         </div>
